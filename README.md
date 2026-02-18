@@ -1,10 +1,11 @@
 # TaskFlow 🚀
 
-A production-grade, full-stack task management application built with React + Node.js. Features JWT authentication, full CRUD task management, search/filter capabilities, and a responsive dark-themed dashboard.
+A frontend-focused task management dashboard built with React, backed by a secure Node.js API.
+Features JWT authentication, full CRUD task management, search/filter capabilities, and a responsive dark-themed dashboard.
 
 ---
 
-## 📸 Features
+## ✨ Frontend Features
 
 ### 🔐 Authentication
 - User Registration with strong password enforcement
