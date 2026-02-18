@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-700/50;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 font-body antialiased;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(20, 184, 166, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  /* ─── Scrollbar ─────────────────────────────────────────── */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-600;
+  }
+
+  /* ─── Glass Card ────────────────────────────────────────── */
+  .glass-card {
+    @apply bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+  .glass-card-hover:hover {
+    @apply border-brand-500/30;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(20, 184, 166, 0.08);
+  }
+
+  /* ─── Buttons ───────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
+           bg-brand-500 hover:bg-brand-400 active:bg-brand-600
+           text-slate-900 font-semibold text-sm rounded-xl
+           transition-all duration-200 shadow-glow-teal-sm
+           focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-slate-950
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-brand-500;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
+           bg-slate-800 hover:bg-slate-700 active:bg-slate-800
+           text-slate-200 font-medium text-sm rounded-xl
+           border border-slate-600/50 hover:border-slate-500/50
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-slate-950
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
+           bg-red-500/10 hover:bg-red-500/20 active:bg-red-500/30
+           text-red-400 hover:text-red-300 font-medium text-sm rounded-xl
+           border border-red-500/20 hover:border-red-500/40
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-slate-950
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2
+           text-slate-400 hover:text-slate-200 hover:bg-slate-800
+           font-medium text-sm rounded-lg
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-slate-950;
+  }
+
+  /* ─── Form Inputs ───────────────────────────────────────── */
+  .input-field {
+    @apply w-full px-4 py-2.5
+           bg-slate-800/60 hover:bg-slate-800 
+           text-slate-100 placeholder-slate-500 text-sm
+           border border-slate-700/50 hover:border-slate-600/50 focus:border-brand-500
+           rounded-xl outline-none
+           transition-all duration-200
+           focus:ring-2 focus:ring-brand-500/20;
+  }
+
+  .input-error {
+    @apply border-red-500/50 focus:border-red-500 focus:ring-red-500/20;
+  }
+
+  /* ─── Badge ─────────────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  /* ─── Status colors ─────────────────────────────────────── */
+  .status-todo { @apply badge bg-slate-700/70 text-slate-300; }
+  .status-in-progress { @apply badge bg-amber-500/15 text-amber-400 border border-amber-500/25; }
+  .status-completed { @apply badge bg-brand-500/15 text-brand-400 border border-brand-500/25; }
+
+  .priority-low { @apply badge bg-slate-700/60 text-slate-400; }
+  .priority-medium { @apply badge bg-blue-500/15 text-blue-400 border border-blue-500/25; }
+  .priority-high { @apply badge bg-red-500/15 text-red-400 border border-red-500/25; }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-400 to-teal-300 bg-clip-text text-transparent;
+  }
+  
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+}
